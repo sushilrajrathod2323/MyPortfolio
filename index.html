@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushil | Developer Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #080d19;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        :root {
+            --accent: #38bdf8;
+            --secondary: #818cf8;
+            --card: #111b2e;
+            --muted: #a5b4c8;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(8, 13, 25, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1e293b;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #dbeafe;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            color: white;
+            border: none;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* COMMON SECTION */
+
+        section {
+            padding: 100px 25px;
+            scroll-margin-top: 65px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 35px;
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: var(--accent);
+        }
+
+        /* HOME */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 40%,
+                rgba(56,189,248,0.13), transparent 35%);
+        }
+
+        .hero {
+            max-width: 1100px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero small {
+            color: var(--accent);
+            font-size: 17px;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.15;
+            margin: 18px 0;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg,
+                var(--accent), var(--secondary));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--accent);
+            color: #08111f;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 1px solid var(--accent);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(56,189,248,0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            margin-left: 12px;
+        }
+
+        /* ABOUT */
+
+        #about {
+            background: #0c1423;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .about-content strong {
+            color: white;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid #24334b;
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent);
+        }
+
+        .skill-card .symbol {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
+            color: var(--accent);
+            margin-bottom: 7px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        #projects {
+            background: #0c1423;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid #24334b;
+            padding: 30px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+        }
+
+        .project-tag {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 5px 12px;
+            background: #1e3652;
+            color: #7dd3fc;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* CONTACT */
+
+        .contact-content {
+            text-align: center;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .contact-content p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #050914;
+            padding: 25px;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid #1e293b;
+        }
+
+        /* MOBILE RESPONSIVE */
+
+        @media (max-width: 700px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #101a2b;
+                flex-direction: column;
+                padding: 25px;
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .btn-outline {
+                margin: 12px 0 0;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <nav>
+            <div class="logo">Sushil.</div>
+
+            <button class="menu-btn" id="menuBtn"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- HOME SECTION -->
+
+    <section id="home">
+        <div class="hero">
+            <div class="hero-content">
+
+                <small>WELCOME TO MY PORTFOLIO</small>
+
+                <h1>
+                    Hi, I'm <span>Sushil Raj</span>
+                </h1>
+
+                <h2>Computer Science Student</h2>
+
+                <p>
+                    I enjoy programming, solving problems
+                    and building things with technology.
+                    Currently exploring Java and Web Development.
+                </p>
+
+                <a href="#projects" class="btn">
+                    View My Work
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section id="about">
+        <div class="container">
+
+            <h2 class="section-title">
+                About <span>Me</span>
+            </h2>
+
+            <div class="about-content">
+                <p>
+                    Hello! I'm <strong>Sushil Raj Rathod</strong>,
+                    a Computer Science and Engineering student.
+
+                    I have an interest in software development,
+                    problem solving and learning new technologies.
+
+                    I enjoy programming with Java and exploring
+                    web development. My goal is to continuously
+                    improve my technical skills and build useful
+                    real-world applications.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+
+    <section id="skills">
+        <div class="container">
+
+            <h2 class="section-title">
+                My <span>Skills</span>
+            </h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <div class="symbol">☕</div>
+                    <h3>Java</h3>
+                    <p>Programming and problem solving</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="symbol">🌐</div>
+                    <h3>HTML</h3>
+                    <p>Webpage structure</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="symbol">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Web design and styling</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="symbol">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>Web interactivity</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="symbol">🧠</div>
+                    <h3>DSA</h3>
+                    <p>Data structures and algorithms</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="symbol">💻</div>
+                    <h3>Problem Solving</h3>
+                    <p>Logical thinking and coding</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+
+    <section id="projects">
+        <div class="container">
+
+            <h2 class="section-title">
+                My <span>Projects</span>
+            </h2>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        A personal website to introduce myself
+                        and showcase my skills and work.
+                    </p>
+                    <span class="project-tag">HTML · CSS · JavaScript</span>
+                </div>
+
+                <div class="project-card">
+                    <h3>More Projects Coming Soon</h3>
+                    <p>
+                        I'm working towards building more
+                        interesting projects and applications.
+                    </p>
+                    <span class="project-tag">Learning & Building</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+
+    <section id="contact">
+        <div class="container">
+
+            <h2 class="section-title">
+                Contact <span>Me</span>
+            </h2>
+
+            <div class="contact-content">
+
+                <p>
+                    Interested in connecting or collaborating?
+                    Feel free to reach out!
+                </p>
+
+                <a href="https://github.com/sushilrajrathod2323"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn">
+                    Visit My GitHub
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>
+            © <span id="year"></span> Sushil Raj.
+            Built with HTML, CSS and JavaScript.
+        </p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+            const isOpen = navLinks.classList.contains("active");
+
+            menuBtn.setAttribute("aria-expanded", isOpen);
+            menuBtn.textContent = isOpen ? "✕" : "☰";
+
+        });
+
+        // Close mobile menu after clicking a link
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("active");
+                menuBtn.textContent = "☰";
+                menuBtn.setAttribute("aria-expanded", "false");
+
+            });
+
+        });
+
+        // Automatically update copyright year
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+</html>
