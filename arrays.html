@@ -1,0 +1,223 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays | DSA Practice</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b, #172554);
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 55px 20px 30px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: #cbd5e1;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .line {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #38bdf8, #f472b6);
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .problem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1e293b;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .problem:hover {
+            transform: translateX(7px);
+            border-color: #38bdf8;
+            background: #263449;
+            box-shadow: 0 5px 20px rgba(56, 189, 248, 0.15);
+        }
+
+        .problem h3 {
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .number {
+            color: #38bdf8;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .arrow {
+            color: #f472b6;
+            font-size: 22px;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin: 35px;
+            color: #38bdf8;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back:hover {
+            color: #f472b6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media(max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .problem {
+                padding: 17px;
+            }
+
+            .problem h3 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ARRAYS</h1>
+        <div class="line"></div>
+        <p>Practice Array Problems | Improve Your Coding Skills</p>
+    </header>
+
+    <section class="container">
+
+        <a href="sum_of_array_elements.html" class="problem">
+            <h3><span class="number">01.</span>Sum of Array Elements</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="rotation_of_matrix.html" class="problem">
+            <h3><span class="number">02.</span>Rotation of Matrix</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="diagonal_traversal_of_matrix.html" class="problem">
+            <h3><span class="number">03.</span>Diagonal Traversal of Matrix</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="spiral_traversal_of_matrix.html" class="problem">
+            <h3><span class="number">04.</span>Spiral Traversal of Matrix</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="product_of_2_matrices.html" class="problem">
+            <h3><span class="number">05.</span>Product of 2 Matrices</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="product_of_xor_of_pairs.html" class="problem">
+            <h3><span class="number">06.</span>Product of XOR of Pairs</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="count_equal_xor_pairs.html" class="problem">
+            <h3><span class="number">07.</span>Count Equal XOR Pairs</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="clockwise_rotation_of_array.html" class="problem">
+            <h3><span class="number">08.</span>Clockwise Rotation of Array</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="forbidden_skipping.html" class="problem">
+            <h3><span class="number">09.</span>Forbidden Skipping</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="longest_increasing_subsequence.html" class="problem">
+            <h3><span class="number">10.</span>Longest Increasing Subsequence</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="box_stacking.html" class="problem">
+            <h3><span class="number">11.</span>Box Stacking</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="compute_ncr.html" class="problem">
+            <h3><span class="number">12.</span>Compute nCr</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="the_knapsack_problem.html" class="problem">
+            <h3><span class="number">13.</span>The Knapsack Problem</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="subset_sum.html" class="problem">
+            <h3><span class="number">14.</span>Subset Sum</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="maze_of_puzzles.html" class="problem">
+            <h3><span class="number">15.</span>Maze of Puzzles</h3>
+            <span class="arrow">→</span>
+        </a>
+
+    </section>
+
+    <a href="dsa.html" class="back">← Back to DSA Topics</a>
+
+    <footer>
+        Keep Practicing. Keep Coding. Keep Growing! 🚀
+    </footer>
+
+</body>
+</html>
+```
