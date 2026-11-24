@@ -1,21 +1,202 @@
 
-import java.io.*;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My DSA Solutions | Sushil</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #080d19;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 25px;
+            background: #111b2e;
+            text-align: center;
+            border-bottom: 1px solid #24334b;
+        }
+
+        header h1 {
+            color: #38bdf8;
+        }
+
+        header p {
+            color: #a5b4c8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .topic {
+            margin-bottom: 35px;
+        }
+
+        .topic h2 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .problem {
+            background: #111b2e;
+            border: 1px solid #24334b;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .problem h3 {
+            margin-bottom: 8px;
+        }
+
+        .difficulty {
+            color: #4ade80;
+            font-size: 13px;
+        }
+
+        .problem p {
+            color: #a5b4c8;
+            margin: 10px 0;
+        }
+
+        pre {
+            background: #050914;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #7dd3fc;
+            margin-top: 12px;
+        }
+
+        button {
+            background: #38bdf8;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #38bdf8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>My DSA Solutions</h1>
+    <p>My problem-solving journey with Java</p>
+    <a href="index.html" class="back">← Back to Portfolio</a>
+</header>
+
+<div class="container">
+
+    <section class="topic">
+        <h2>Arrays</h2>
+
+        <div class="problem">
+            <h3>1. Two Sum</h3>
+            <span class="difficulty">Easy</span>
+
+            <p>
+                Given an array and a target value,
+                find two elements whose sum equals
+                the target.
+            </p>
+
+            <p><b>Language:</b> Java</p>
+
+            <pre><code>
 import java.util.*;
 
-public class Main 
-{
+public class Main {
+    public static void main(String[] args) {
+        int arr[] = {2, 7, 11, 15};
+        int target = 9;
 
-    public static void main(String[] args)
-    {
-        Scanner sc=new Scanner(System.in);
-        int t = sc.nextInt();
-        while(t--!=0){
-            int n = sc.nextInt();
-            long sum = 0;
-            for(int i= 0 ;i<n ;i++){
-                sum+=sc.nextLong();
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = i + 1; j < arr.length; j++) {
+                if(arr[i] + arr[j] == target) {
+                    System.out.println(i + " " + j);
+                }
             }
-            System.out.println(sum);
         }
     }
 }
+            </code></pre>
+
+            <button onclick="copyCode(this)">Copy Code</button>
+        </div>
+
+    </section>
+
+    <section class="topic">
+        <h2>Strings</h2>
+
+        <div class="problem">
+            <h3>2. Valid Palindrome</h3>
+            <span class="difficulty">Easy</span>
+
+            <p>
+                Check whether a given string is a
+                palindrome or not.
+            </p>
+
+            <p><b>Language:</b> Java</p>
+
+            <pre><code>
+public class Main {
+    public static void main(String[] args) {
+        String str = "madam";
+        String rev = "";
+
+        for(int i = str.length() - 1; i >= 0; i--) {
+            rev += str.charAt(i);
+        }
+
+        System.out.println(str.equals(rev));
+    }
+}
+            </code></pre>
+
+            <button onclick="copyCode(this)">Copy Code</button>
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+    function copyCode(button) {
+        const code = button.previousElementSibling.innerText;
+
+        navigator.clipboard.writeText(code).then(() => {
+            button.innerText = "Copied!";
+            setTimeout(() => {
+                button.innerText = "Copy Code";
+            }, 1500);
+        });
+    }
+</script>
+
+</body>
+</html>
+
