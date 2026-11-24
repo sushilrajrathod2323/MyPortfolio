@@ -1,0 +1,278 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings | DSA Practice</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b, #172554);
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 55px 20px 30px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: #cbd5e1;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .line {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #38bdf8, #f472b6);
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .problem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1e293b;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .problem:hover {
+            transform: translateX(7px);
+            border-color: #38bdf8;
+            background: #263449;
+            box-shadow: 0 5px 20px rgba(56, 189, 248, 0.15);
+        }
+
+        .problem h3 {
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .number {
+            color: #38bdf8;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .arrow {
+            color: #f472b6;
+            font-size: 22px;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin: 35px;
+            color: #38bdf8;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back:hover {
+            color: #f472b6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media(max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            .problem {
+                padding: 17px;
+            }
+
+            .problem h3 {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>STRINGS</h1>
+        <div class="line"></div>
+        <p>Practice String Problems | Improve Your Coding Skills</p>
+    </header>
+
+    <section class="container">
+
+        <a href="interleavings.html" class="problem">
+            <h3><span class="number">01.</span>Interleavings</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="first_repeating_character_1.html" class="problem">
+            <h3><span class="number">02.</span>First Repeating Character - 1</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="first_repeating_character_2.html" class="problem">
+            <h3><span class="number">03.</span>First Repeating Character - 2</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="longest_substring_without_vowels.html" class="problem">
+            <h3><span class="number">04.</span>Longest Substring without Vowels</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="words_vowels_and_consonants.html" class="problem">
+            <h3><span class="number">05.</span>Words, Vowels and Consonants</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="guess_the_problem_1.html" class="problem">
+            <h3><span class="number">06.</span>Guess the Problem - 1</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="guess_the_problem_2.html" class="problem">
+            <h3><span class="number">07.</span>Guess the Problem - 2</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="string_modulo.html" class="problem">
+            <h3><span class="number">08.</span>String Modulo</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="check_anagrams.html" class="problem">
+            <h3><span class="number">09.</span>Check Anagrams</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="number_of_anagramic_groups.html" class="problem">
+            <h3><span class="number">10.</span>Number of Anagramic Groups</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="longest_palindromic_substring.html" class="problem">
+            <h3><span class="number">11.</span>Longest Palindromic Substring</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="enclosing_substring.html" class="problem">
+            <h3><span class="number">12.</span>Enclosing Substring</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="longest_substring_with_max_k_vowels.html" class="problem">
+            <h3><span class="number">13.</span>Longest Substring with Max K Vowels</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="generating_string_permutations.html" class="problem">
+            <h3><span class="number">14.</span>Generating String Permutations</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="rank_of_string.html" class="problem">
+            <h3><span class="number">15.</span>Rank of String</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="rank_of_string_with_duplicates.html" class="problem">
+            <h3><span class="number">16.</span>Rank of String with Duplicates</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="words_start_end_with_vowel.html" class="problem">
+            <h3><span class="number">17.</span>Words Start & End with Vowel</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="substring_matching.html" class="problem">
+            <h3><span class="number">18.</span>Substring Matching</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="rabin_karp_string_matching_algorithm.html" class="problem">
+            <h3><span class="number">19.</span>Rabin Karp String Matching Algorithm</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="kmp_string_matching_algorithm.html" class="problem">
+            <h3><span class="number">20.</span>KMP String Matching Algorithm</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="longest_palindromic_substring_hard.html" class="problem">
+            <h3><span class="number">21.</span>Longest Palindromic Substring Hard</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="reverse_the_sentence.html" class="problem">
+            <h3><span class="number">22.</span>Reverse the Sentence</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="changing_directories.html" class="problem">
+            <h3><span class="number">23.</span>Changing Directories</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="decode_strings.html" class="problem">
+            <h3><span class="number">24.</span>Decode Strings</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="longest_common_subsequence.html" class="problem">
+            <h3><span class="number">25.</span>Longest Common Subsequence</h3>
+            <span class="arrow">→</span>
+        </a>
+
+        <a href="longest_palindromic_subsequence.html" class="problem">
+            <h3><span class="number">26.</span>Longest Palindromic Subsequence</h3>
+            <span class="arrow">→</span>
+        </a>
+
+    </section>
+
+    <a href="dsa.html" class="back">← Back to DSA Topics</a>
+
+    <footer>
+        Keep Practicing. Keep Coding. Keep Growing! 🚀
+    </footer>
+
+</body>
+</html>
+```
